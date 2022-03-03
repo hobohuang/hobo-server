@@ -1,0 +1,21 @@
+{
+  "extends": "eslint-config-egg",
+  "rules": {
+		//强制使用单引号
+		"quotes": ["error", "single"],
+		//强制不使用分号结尾
+		"semi": ["error", "always"],
+    // 
+    "no-tbs":"off",
+    "indent": ["off", 2],
+    "comma-dangle": ["error", {
+      "arrays": "never",
+      "objects": "never",
+      "imports": "never",
+      "exports": "never",
+      "functions": "never"
+    }],
+    "array-bracket-spacing": ["error", "never"]
+    
+	}
+}
