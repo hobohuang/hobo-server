@@ -13,11 +13,13 @@ module.exports = (options, app) => {
 			}
 		} catch (error) {
 			isUserful = false;
-			ctx.body = {
+			const body = {
+				status: 400,
 				code: 4001,
 				message: 'token失效或解析错误',
 				data: null
 			};
+			ctx.helper.success(body);
 		}
 		if (isUserful) {
 			await next();

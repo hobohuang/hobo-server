@@ -1,22 +1,8 @@
 'use strict';
 
 const argument = {
-	'/login': { userID: { type: 'string' }, password: { type: 'password' } },
-	'/logout': {},
-	'/getFriendList': {},
-	'/getMessageList': {},
-	'/getMessage': { uid: { type: 'string' }, fid: { type: 'string' } },
-	'/test': {},
-	'/addFriend': { rid: { type: 'string' }, content: { type: 'string' } },
-	'/feedbackAdd': { sid: { type: 'string' }, state: { type: 'number', min: 1, max: 3 } },
-	'/getAddlist': {},
-	'/searchUser': { uid: { type: 'string' } },
-	'/register': {
-		uid: { type: 'string' },
-		password: { type: 'password' },
-		nickname: { type: 'string' },
-		icon: { type: 'string' }
-	}
+	// '/login': { userID: { type: 'string' }, password: { type: 'password' } },
+	'/': {}
 };
 
 module.exports = () => {
@@ -33,11 +19,13 @@ module.exports = () => {
 				ctx.body = error;
 			}
 		} else {
-			ctx.body = {
+			const body = {
+				status: 400,
 				code: 4000,
-				message: '传入路由有误',
+				msg: '传入路由有误',
 				data: null
 			};
+			ctx.helper.success(body);
 		}
 	};
 };
